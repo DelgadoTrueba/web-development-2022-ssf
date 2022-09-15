@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <div>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name">
+
+          <label for="surname">Apellidos:</label>
+          <input type="text" id="surname">
+
+          <ul>
+              <li>
+                <label for="mas">Masculino</label>
+                <input type="radio" id="mas" name="gen">
+              </li>
+              <li>
+                <label for="fem">Femenino</label>
+                <input type="radio" id="fem" name="gen">
+              </li>
+              <li>
+                <label for="sin">Sin determinar</label>
+                <input type="radio" id="sin" name="gen">
+              </li>
+          </ul>
+          <label for="nacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="nacimiento">
+          <label for="pai">Pais:</label>
+          <input type="list" list="pais" id="pai">
+          <datalist id="pais">
+              <option value="España"></option>
+              <option value="Francia"></option>
+              <option value="EE.UU"></option>
+          </datalist>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Datod de Inicio de Sesion</legend>
+        <div>
+          <label for="user">Nombre de Usuario:</label>
+          <input type="text" id="user"><br>
+          <label for="email">Correo electronico:</label>
+          <input type="email" id="email">
+          <label for="email1">Confirmar Correo electronico:</label>
+          <input type="email" id="email1"><br>
+          <label for="con">Contraseña:</label>
+          <input type="password" id="con">
+          <label for="con1">Confirmar Contraseña:</label>
+          <input type="password" id="con1">
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
