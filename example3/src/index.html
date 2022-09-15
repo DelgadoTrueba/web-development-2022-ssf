@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
+    <script type="text/javascript">
+        console.log("Hola Mundo desde index.html");
+        function handlerSubmit($event) {
+          $event.preventdefault()
+          console.log("handlerSubmit");
+        } 
+    </script>
   </head>
   <body>
-    <form>
+    <form onsubmit="handlerSubmit($event)">
       <fieldset>
         <legend>Datos Personales</legend>
         <div>
@@ -55,6 +62,10 @@
           <input type="password" id="con1">
         </div>
       </fieldset>
+      <button type="button">Enviar</button>
+      <button type="reset">Enviar reaet</button>
+      <button type="submit">Enviar submit</button>
+      
     </form>
   </body>
 </html>
