@@ -5,14 +5,18 @@
     <title>Webpack App</title>
     <script type="text/javascript">
         console.log("Hola Mundo desde index.html");
-        function handlerSubmit($event) {
-          $event.preventdefault()
+        function handlerSubmit($event, formEl) {
+          $event.preventDefault()
           console.log("handlerSubmit");
+          console.log({
+            $event,
+            formEl
+          })
         } 
     </script>
   </head>
   <body>
-    <form onsubmit="handlerSubmit($event)">
+    <form onsubmit="handlerSubmit(event, this)">
       <fieldset>
         <legend>Datos Personales</legend>
         <div>
@@ -62,8 +66,8 @@
           <input type="password" id="con1">
         </div>
       </fieldset>
-      <button type="button">Enviar</button>
-      <button type="reset">Enviar reaet</button>
+      <button type="button">Enviar btn</button>
+      <button type="reset">Enviar reset</button>
       <button type="submit">Enviar submit</button>
       
     </form>
