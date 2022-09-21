@@ -7,10 +7,14 @@
 
         console.log("Hola Mundo desde index.html");
 
+        const fieldsetForm1 = {};
+
         function handlerChange($event, inputEl){
           let key = $event.target.name
           let value = $event.target.value;
         
+          fieldsetForm1[key] = value;
+
           console.log({
             el: inputEl,
             key, 
@@ -21,9 +25,11 @@
         function handlerSubmit($event, formEl) {
           $event.preventDefault()
           console.log("handlerSubmit");
+          
           console.log({
             $event,
-            formEl
+            formEl,
+            fieldsetForm1
           })
         } 
 
