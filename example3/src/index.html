@@ -7,7 +7,14 @@
 
         console.log("Hola Mundo desde index.html");
 
-        const fieldsetForm1 = {};
+        let fieldsetForm1 = undefined;
+        let btnSubmit = undefined;
+        
+        function handlerLoadPage($event, bodyEl){
+          console.log("handlerLoadPage");
+          fieldsetForm1 = {};
+          btnSubmit = window.document.querySelector('#btnSubmit');
+        }
 
         function handlerChange($event, inputEl){
           let key = $event.target.name
@@ -18,8 +25,25 @@
           console.log({
             el: inputEl,
             key, 
-            value
+            value,
           })  
+          
+          if(enableBtnSubmit(fieldsetForm1)){
+            btnSubmit.disabled = false;
+          }
+          else{
+            btnSubmit.disabled = true;
+          }
+        }
+
+
+        function enableBtnSubmit(fieldsetForm1) {
+          if(fieldsetForm1.name && fieldsetForm1.surname){
+            return true;
+          }
+          else{
+            return false;
+          }
         }
 
         function handlerSubmit($event, formEl) {
@@ -35,7 +59,7 @@
 
     </script>
   </head>
-  <body>
+  <body onload="handlerLoadPage(event, this)">
     <form onsubmit="handlerSubmit(event, this)">
       <fieldset>
         <legend>Datos Personales</legend>
@@ -92,7 +116,7 @@
       </fieldset>
       <button type="button">Enviar btn</button>
       <button type="reset">Enviar reset</button>
-      <button type="submit">Enviar submit</button>
+      <button type="submit" id="btnSubmit" disabled="true">Enviar submit</button>
       
     </form>
   </body>
