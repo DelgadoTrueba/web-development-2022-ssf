@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <title>Webpack App</title>
     <script type="text/javascript">
+
         console.log("Hola Mundo desde index.html");
+
+        function handlerChange($event, inputEl){
+          let key = $event.target.name
+          let value = $event.target.value;
+        
+          console.log({
+            el: inputEl,
+            key, 
+            value
+          })  
+        }
+
         function handlerSubmit($event, formEl) {
           $event.preventDefault()
           console.log("handlerSubmit");
@@ -13,6 +26,7 @@
             formEl
           })
         } 
+
     </script>
   </head>
   <body>
@@ -21,10 +35,10 @@
         <legend>Datos Personales</legend>
         <div>
           <label for="name">Nombre:</label>
-          <input type="text" id="name">
+          <input type="text" id="name" name="name" onchange="handlerChange(event, this)">
 
           <label for="surname">Apellidos:</label>
-          <input type="text" id="surname">
+          <input type="text" id="surname" name="surname" onchange="handlerChange(event, this)">
 
           <ul>
               <li>
@@ -40,17 +54,21 @@
                 <input type="radio" id="sin" name="gen">
               </li>
           </ul>
+
           <label for="nacimiento">Fecha de nacimiento:</label>
-          <input type="date" id="nacimiento">
+          <input type="date" id="nacimiento" name="nacimiento" onchange="handlerChange(event, this)">
+
           <label for="pai">Pais:</label>
-          <input type="list" list="pais" id="pai">
+          <input type="list" list="pais" id="pais" name="pais" onchange="handlerChange(event, this)">
           <datalist id="pais">
               <option value="España"></option>
               <option value="Francia"></option>
               <option value="EE.UU"></option>
           </datalist>
+          
         </div>
       </fieldset>
+
       <fieldset>
         <legend>Datod de Inicio de Sesion</legend>
         <div>
