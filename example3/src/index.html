@@ -13,6 +13,7 @@
         function handlerLoadPage($event, bodyEl){
           console.log("handlerLoadPage");
           fieldsetForm1 = {};
+          fieldsetForm2 = {};
           btnSubmit = window.document.querySelector('#btnSubmit');
         }
 
@@ -21,6 +22,7 @@
           let value = $event.target.value;
         
           fieldsetForm1[key] = value;
+
 
           console.log({
             el: inputEl,
@@ -34,6 +36,21 @@
           else{
             btnSubmit.disabled = true;
           }
+        }
+
+        function handlerChange1($event, inputEl){
+          let key = $event.target.name
+          let value = $event.target.value;
+        
+          fieldsetForm2[key] = value;
+
+
+          console.log({
+            el: inputEl,
+            key, 
+            value,
+          })  
+          
         }
 
 
@@ -53,7 +70,8 @@
           console.log({
             $event,
             formEl,
-            fieldsetForm1
+            fieldsetForm1,
+            fieldsetForm2
           })
         } 
 
@@ -103,15 +121,15 @@
         <legend>Datod de Inicio de Sesion</legend>
         <div>
           <label for="user">Nombre de Usuario:</label>
-          <input type="text" id="user"><br>
+          <input type="text" id="user" name="user" onchange="handlerChange1(event, this)"><br>
           <label for="email">Correo electronico:</label>
-          <input type="email" id="email">
+          <input type="email" id="email" name="email" onchange="handlerChange1(event, this)">
           <label for="email1">Confirmar Correo electronico:</label>
-          <input type="email" id="email1"><br>
+          <input type="email" id="email1" name="email1" onchange="handlerChange1(event, this)"><br>
           <label for="con">Contraseña:</label>
-          <input type="password" id="con">
+          <input type="password" id="con" name="con" onchange="handlerChange1(event, this)">
           <label for="con1">Confirmar Contraseña:</label>
-          <input type="password" id="con1">
+          <input type="password" id="con1" name="con1" onchange="handlerChange1(event, this)">
         </div>
       </fieldset>
       <button type="button">Enviar btn</button>
