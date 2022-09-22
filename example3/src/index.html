@@ -50,10 +50,32 @@
             key, 
             value,
           })  
+
+          if(enableBtnSubmit1(fieldsetForm2)){
+            btnSubmit.disabled = false;
+          }
+          else{
+            btnSubmit.disabled = true;
+          }
           
         }
 
+        function enableBtnSubmit1(fieldsetForm2) {
+          if(fieldsetForm2.email === fieldsetForm2.email1){
+            if(fieldsetForm2.con === fieldsetForm2.con1) {
+              return true;
+            }else {
+              return false
+            }
+          }
+          else{
+            return false;
+          }
+        }
 
+
+
+        
         function enableBtnSubmit(fieldsetForm1) {
           if(fieldsetForm1.name && fieldsetForm1.surname){
             return true;
