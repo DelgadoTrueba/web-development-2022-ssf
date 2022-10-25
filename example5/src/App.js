@@ -1,13 +1,11 @@
-import Usuario from "./components/usuario";
-import InicioSesion from "./components/perfil";
+import Formulario from "./components/form";
 import "./App.css"
 
 function App() {
+  
+
   return (
-    <form>
-      <Usuario></Usuario>
-      <InicioSesion></InicioSesion>
-    </form>
+    <Formulario></Formulario>
   );
 }
 
